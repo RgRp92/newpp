@@ -239,6 +239,10 @@ class Page10ProvaStrumento(Page):
     def is_displayed(self):
         return self.round_number == 1
 
+class Page10BGOBACK(Page):
+    def is_displayed(self):
+        return self.round_number == 1
+
 class Page11Esperti(Page):
     def is_displayed(self):
         return self.round_number == 1
@@ -936,6 +940,7 @@ page_sequence = [
     Page9Quiz2PageRight,
     Page9Quiz2bisPage,
     Page10ProvaStrumento,
+    Page10BGOBACK,
     Page23MyWaitPage,
     Page24FarmerChoice,
     Page25Repeat1,
