@@ -17,7 +17,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
     # these are the lottery payoffs, f1 and f2 refer to lottery A and f3 and f4 to lottery B
-    ist =[150,500,850,880,910,940,961,980,1000,1030,1060,1100]
+    ist =[261,611,961,991,1021,1051,1072,1091,1111,1141,1171,1211]
     var1 = 0.30
     var11 = 0.20
 
