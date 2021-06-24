@@ -105,6 +105,13 @@ class Page5Esempio1(Page):
 
     def is_displayed(self):
         return self.round_number == 1
+class Page6Esempio1(Page):
+    def vars_for_template(self):
+            # Set the belief data for the participant
+        set_beliefs_data(self)
+
+    def is_displayed(self):
+        return self.round_number == 1
 
 class Page7Esempio2(Page):
     def vars_for_template(self):
@@ -120,6 +127,21 @@ class Page7Esempio2a(Page):
 
     def is_displayed(self):
         return self.round_number == 1
+class Page7Esempio2ab(Page):
+    def vars_for_template(self):
+            # Set the belief data for the participant
+        set_beliefs_data(self)
+
+    def is_displayed(self):
+        return self.round_number == 1
+class Page7Esempio2ac(Page):
+    def vars_for_template(self):
+            # Set the belief data for the participant
+        set_beliefs_data(self)
+
+    def is_displayed(self):
+        return self.round_number == 1
+
 class Page7Esempio2b(Page):
     def vars_for_template(self):
             # Set the belief data for the participant
@@ -956,8 +978,11 @@ page_sequence = [
     Page3Strumento2,
     Page4Payoff,
     Page5Esempio1,
+    Page6Esempio1,
     Page7Esempio2,
     Page7Esempio2a,
+    Page7Esempio2ab,
+    Page7Esempio2ac,
     Page7Esempio2b,
     Page7Esempio2d,
     Page9QuizPage,
