@@ -4,14 +4,15 @@ from .models import Constants
 import pandas as pd
 import random
 import json
+import statistics
 from random import choices
 
 def get_beldat(page_obj):
 
     farm_dat = page_obj.session.vars["beliefs_farm_dat"]
 
-    bin_labels = [str(farm_dat["alt" + str(b)].iloc[0]) for b in range(1,6) if str(farm_dat["alt" + str(b)].iloc[0]) != "nan"]
-    alt_labels = [str(farm_dat["alt" + str(b)].iloc[0]) for b in range(1,6) if str(farm_dat["alt" + str(b)].iloc[0]) != "nan"]
+    bin_labels = [str(farm_dat["alt" + str(b)].iloc[0]) for b in range(1, 6) if str(farm_dat["alt" + str(b)].iloc[0]) != "nan"]
+    alt_labels = [str(farm_dat["alt" + str(b)].iloc[0]) for b in range(1, 6) if str(farm_dat["alt" + str(b)].iloc[0]) != "nan"]
 
     # If bin_button is empty, don't show the button to toggle alt labels
     bin_button = str(farm_dat["bin_button"].iloc[0]).strip()
@@ -51,12 +52,26 @@ class Page0(Page):
         return self.round_number == 1
 
 class Page1FarmerInfo(Page):
+    form_model = 'player'
+    form_fields = ['applearea','insprem','insvalue','cost','income1','income2','income3',]
+
+
     def vars_for_template(self):
         # Set the belief data for the participant
         set_beliefs_data(self)
 
+
     def is_displayed(self):
         return self.round_number == 1
+
+    def before_next_page(self):
+        self.player.avginc = statistics.mean([self.player.income1, self.player.income2, self.player.income3])
+        self.player.avginc = round(self.player.avginc, 2)
+        self.participant.vars['applearea']= self.player.applearea
+        self.participant.vars['appleareaist'] = (self.player.applearea * 150)
+        self.participant.vars['insvalue']= self.player.insvalue
+        self.participant.vars['insprem']= self.player.insprem
+        self.participant.vars['avginc']= self.player.avginc
 
 class Page2Interval(Page):
     def vars_for_template(self):
@@ -141,7 +156,6 @@ class Page7Esempio2ac(Page):
 
     def is_displayed(self):
         return self.round_number == 1
-
 class Page7Esempio2b(Page):
     def vars_for_template(self):
             # Set the belief data for the participant
@@ -268,6 +282,7 @@ class Page11Esperti(Page):
 class Page11Espertia(Page):
     def is_displayed(self):
         return self.round_number == 1
+
 class Page11Espertib(Page):
     def is_displayed(self):
         return self.round_number == 1
@@ -319,7 +334,21 @@ class Page22RipEsemp3e(Page):
         return self.round_number == 1
 
 class Page23MyWaitPage(Page):
+    template_name = 'Fase1SF/Page23MyWaitPage.html'
+
+    def vars_for_template(self):
+        return {
+        'inc1' : self.player.income1,
+        'inc2': self.player.income2,
+        'inc3': self.player.income3,
+        'applearea': self.participant.vars['applearea'],
+        'insvalue': self.participant.vars['insvalue'],
+        'insprem': self.participant.vars['insprem'],
+        'avginc': self.participant.vars['avginc'],
+        }
+
     def is_displayed(self):
+
         return self.round_number == 1
 
 class Page24FarmerChoice(Page):
@@ -379,7 +408,7 @@ class Page24FarmerChoice(Page):
 
     def app_after_this_page(self, upcoming_apps):
         if self.player.rip1 == '0':
-            return 'Fase2NEW'
+            return 'Fase2SF'
 
 class Page25Repeat1(Page):
     form_model = "player"
@@ -511,7 +540,7 @@ class Page26Farmer1ChoiceResult(Page):
 
     def app_after_this_page(self, upcoming_apps):
         if self.player.rip1 == '0':
-            return 'Fase2NEW'
+            return 'Fase2SF'
 
 class Page27Repeat2(Page):
     form_model = "player"
@@ -751,7 +780,7 @@ class Page29Farmer2ChoicesResult(Page):
 
     def app_after_this_page(self, upcoming_apps):
         if self.player.rip2 == '0':
-            return 'Fase2NEW'
+            return 'Fase2SF'
 
 class Page28Farmer3ChoicesUrna2(Page):
     form_model = "player"

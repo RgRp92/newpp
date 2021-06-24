@@ -442,6 +442,27 @@ class IstruzioniPage2c(Page):
             'var6': var6,
             'rate': rate
         }
+class IstruzioniPage2d(Page):
+    form_model = 'player'
+
+    def vars_for_template(self):
+        var1 = Constants.var1*100
+        var2 = Constants.var2*100
+        var3 = Constants.var3*100
+        var4 = Constants.var4 * 100
+        var5 = Constants.var5 * 100
+        var6 = Constants.var6 * 100
+        self.player.vars_for_template()
+        rate = round(25000 / self.participant.vars['inc5'], 2)
+        return {
+            'var1': var1,
+            'var2': var2,
+            'var3': var3,
+            'var4': var4,
+            'var5': var5,
+            'var6': var6,
+            'rate': rate
+        }
 
 class IstruzioniPage3(Page):
     form_model = 'player'
@@ -922,6 +943,7 @@ page_sequence = [
     IstruzioniPage2,
     IstruzioniPage2b,
     IstruzioniPage2c,
+    IstruzioniPage2d,
     IstruzioniPage3,
     IstruzioniPage3a,
     IstruzioniPage3b,
