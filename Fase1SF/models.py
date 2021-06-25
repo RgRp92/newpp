@@ -72,16 +72,16 @@ class Player(BasePlayer):
 
     sum_token = models.FloatField(min=100, max=100)
 
-    applearea = models.FloatField(default=0, min=0, label="")
+    applearea = models.FloatField(default=0, min=1, label="")
 
-    insprem = models.FloatField(default=0,min=0,label="")
-    insvalue = models.FloatField(default=0,min=0,label="")
-    cost = models.FloatField(default=0,min=0,label="")
+    insprem = models.FloatField(default=0,min=1,label="")
+    insvalue = models.FloatField(default=0,min=1,label="")
+    cost = models.FloatField(default=0,min=1,label="")
 
-    income1 = models.FloatField(default=0,min=0,label="")
-    income2 = models.FloatField(default=0,min=0,label="")
-    income3 = models.FloatField(default=0,min=0,label="")
-    avginc = models.FloatField(default=0,min=0,label="")
+    income1 = models.FloatField(default=0,min=1,label="")
+    income2 = models.FloatField(default=0,min=1,label="")
+    income3 = models.FloatField(default=0,min=1,label="")
+    avginc = models.FloatField(default=0,min=1,label="")
 
     w_amt = models.FloatField(default=0,min=0,label="")
 
