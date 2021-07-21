@@ -264,3 +264,8 @@ class Player(BasePlayer):
         label='Cooperazione',
         widget=widgets.RadioSelectHorizontal,
     )
+    qmail = models.StringField(
+        choices=[['1', 'Si'],
+                 ['2','No']],
+        label='Vorrebbe che la sua mail venisse inserita in un database ed essere contatto per eventuali studi futuri?',
+        widget=widgets.RadioSelect )

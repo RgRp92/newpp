@@ -44,9 +44,13 @@ class Page6LikertScaleQ1(Page):
 
 class ResultsWaitPage(WaitPage):
     pass
+class Page7(Page):
+    form_model = 'player'
+    form_fields = ['qmail']
 
 class Results(Page):
     form_model = 'player'
+    form_fields = ['qmail']
 
 page_sequence = [Page0,
                  Page1Demographics,
@@ -55,4 +59,5 @@ page_sequence = [Page0,
                  Page4ISTsurvey,
                  Page5LikertScaleQ,
                  Page6LikertScaleQ1,
+                 Page7,
                  Results]
