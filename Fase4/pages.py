@@ -30,7 +30,7 @@ class Page3AgriAct2(Page):
 class Page4ISTsurvey(Page):
     form_model = 'player'
     form_fields = ['q16','q16_a','q16_b','q16_c','q16_d',
-                   'q17','q18','q19','q20','q21']
+                   'q17','q18','q19','q20','q21','q22']
 
 class Page5LikertScaleQ(Page):
     form_model = 'player'

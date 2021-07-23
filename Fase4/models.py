@@ -184,6 +184,13 @@ class Player(BasePlayer):
         label='21. Preferisce che le richieste di risarcimento al Fondo IST Mele:',
         widget=widgets.RadioSelect )
 
+    q22 = models.StringField(
+        choices=[['1', 'Si'],
+                 ['2', 'No'],
+                 ['3', 'Non saprei']],
+        label='22. Parteciperà al Fondo IST Mele il prossimo anno?',
+        widget=widgets.RadioSelect)
+
     qc1 = models.StringField(
         choices=[['1',''], ['2',''],['3',''],['4',''],['5','']],
         label='Cooperazione',
