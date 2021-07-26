@@ -56,7 +56,7 @@ class Fase2(Page):
             'payoff_HLc': payoff_HLc,  # payoff
             'row': self.player.participant.vars['HL_row'],  # randomly chosen row
             'value': self.participant.vars['HL_random'],  # randomly chosen value to define outcome
-            'choice': self.participant.vars['HL_choice'],  # actual choice
+            'choice': self.participant.vars['HL_choice_s1'],  # actual choice
             # outcomes of the selected row
             'a1_value': self.participant.vars['a1_value'],
             'a2_value': self.participant.vars['a2_value'],

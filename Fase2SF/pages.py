@@ -114,7 +114,7 @@ class ISTPage3b(Page):
         inspremist = round((insprem * 0.04),2)
         inspremdisc = round((insprem * 0.04),2)
 
-        istct = (150 + inspremist + insvalueist)
+        istct = round((150 + inspremist + insvalueist),2)
 
         disctot = round((insvaluedisc + inspremdisc),2)
 
@@ -157,7 +157,7 @@ class ISTPage3c(Page):
         inspremist = round((insprem * 0.04),2)
         inspremdisc = round((insprem * 0.04),2)
 
-        istct = (150 + inspremist + insvalueist)
+        istct = round((150 + inspremist + insvalueist),2)
 
         disctot = round((insvaluedisc + inspremdisc),2)
 
@@ -199,7 +199,7 @@ class ISTPage3d(Page):
         inspremist = round((insprem * 0.04),2)
         inspremdisc = round((insprem * 0.04),2)
 
-        istct = (150 + inspremist + insvalueist)
+        istct = round((150 + inspremist + insvalueist),2)
 
         disctot = round((insvaluedisc + inspremdisc),2)
 
@@ -239,15 +239,15 @@ class ISTPage4(Page):
         inspremist = (insprem * 0.04)
         inspremdisc = (insprem * 0.04)
 
-        istct = (inspremist + insvalueist + 150)
+        istct = round((inspremist + insvalueist + 150),2)
 
-        disctot = (insvaluedisc + inspremdisc)
+        disctot = round((insvaluedisc + inspremdisc),2)
 
-        farmercost = (istct - disctot)
+        farmercost = round((istct - disctot),2)
 
         eutot = round(((istct * 70) / 30), 2)
 
-        totfin = (istct + eutot)
+        totfin = round((istct + eutot),2)
 
         avginc = self.participant.vars['avginc']
         red = 25
@@ -291,11 +291,11 @@ class ISTPage4a(Page):
         inspremist = (insprem * 0.04)
         inspremdisc = (insprem * 0.04)
 
-        istct = (inspremist + insvalueist + 150)
+        istct = round((inspremist + insvalueist + 150),2)
 
-        disctot = (insvaluedisc + inspremdisc)
+        disctot = round((insvaluedisc + inspremdisc),2)
 
-        farmercost = (istct - disctot)
+        farmercost = round((istct - disctot),2)
 
         eutot = round(((istct * 70) / 30), 2)
 
@@ -342,11 +342,11 @@ class ISTPage4b(Page):
         inspremist = (insprem * 0.04)
         inspremdisc = (insprem * 0.04)
 
-        istct = (inspremist + insvalueist + 150)
+        istct = round((inspremist + insvalueist + 150),2)
 
-        disctot = (insvaluedisc + inspremdisc)
+        disctot = round((insvaluedisc + inspremdisc),2)
 
-        farmercost = (istct - disctot)
+        farmercost = round((istct - disctot),2)
 
         eutot = round(((istct * 70) / 30), 2)
 
