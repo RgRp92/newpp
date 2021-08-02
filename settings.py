@@ -163,5 +163,29 @@ ROOMS = [
         display_name = 'Studio Giorno 6',
         participant_label_file='rooms/day6_label.txt',
         use_secure_urls=True
+    ),
+    dict(
+        name='day_7',
+        display_name = 'Studio Giorno 7',
+        participant_label_file='rooms/day7_label.txt',
+        use_secure_urls=True
+    ),
+    dict(
+        name='day_8',
+        display_name = 'Studio Giorno 8',
+        participant_label_file='rooms/day8_label.txt',
+        use_secure_urls=True
+    ),
+    dict(
+        name='day_9',
+        display_name = 'Studio Giorno 9',
+        participant_label_file='rooms/day9_label.txt',
+        use_secure_urls=True
+    ),
+    dict(
+        name='day_10',
+        display_name = 'Studio Giorno 10',
+        participant_label_file='rooms/day10_label.txt',
+        use_secure_urls=True
     )
 ]
